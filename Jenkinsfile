@@ -12,7 +12,7 @@ node {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     withCredentials([usernamePassword(credentialsId: 'delphine-ibtapp', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
                         //script {def encodedPassword = URLEncoder.encode("$GIT_PASSWORD",'UTF-8')}
-                        //script  {def IMAGE='ooghenekaro/amazon'}
+                        //script  {def IMAGE='dngwenyi/delphine-ibtapp'}
                         sh "git config user.email dngwenyi@gmail.com"
                         sh "git config user.name dngwenyi"
                         //sh "git switch master"

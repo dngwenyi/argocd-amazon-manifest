@@ -4,13 +4,13 @@ node {
     env.IMAGE = 'dngwenyi/delphine-ibtapp'
 
     stage('Clone repository') {
-             git branch: 'main', url: 'https://github.com/dngwenyi/argocd-amazon-manifest.git'  
+             git branch: 'main', url: 'https://github.com/dngwenyi/argocd-amazon-manifest.git'
     }
 
     stage('Update GIT') {
             script {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    withCredentials([usernamePassword(credentialsId: 'delphine-ibtapp', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
+                    withCredentials([usernamePassword(credentialsId: 'dngwenyi-github', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
                         //script {def encodedPassword = URLEncoder.encode("$GIT_PASSWORD",'UTF-8')}
                         //script  {def IMAGE='dngwenyi/delphine-ibtapp'}
                         sh "git config user.email dngwenyi@gmail.com"

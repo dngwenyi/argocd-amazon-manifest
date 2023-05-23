@@ -23,7 +23,7 @@ spec:
     spec: # Pod spec
       containers:
       - name: amazon-container
-        image: dngweny/delphine-ibtapp
+        image: dngwenyi/delphine-ibtapp:latest
         ports:
         - containerPort: 3000
         

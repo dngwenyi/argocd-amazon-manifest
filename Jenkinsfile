@@ -1,7 +1,7 @@
 node {
     def app
     
-    env.IMAGE = 'dngwenyi/delphine-ibtapp'
+    env.IMAGE = 'dngwenyi/kash-project'
 
     stage('Clone repository') {
              git branch: 'main', url: 'https://github.com/dngwenyi/argocd-amazon-manifest.git'
@@ -10,9 +10,9 @@ node {
     stage('Update GIT') {
             script {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    withCredentials([usernamePassword(credentialsId: 'delphine-git adv project', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
+                    withCredentials([usernamePassword(credentialsId: 'dngwenyi', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
                         //script {def encodedPassword = URLEncoder.encode("$GIT_PASSWORD",'UTF-8')}
-                        //script  {def IMAGE='dngwenyi/delphine-ibtapp'}
+                        //script  {def IMAGE='ooghenekaro/amazon'}
                         sh "git config user.email dngwenyi@gmail.com"
                         sh "git config user.name dngwenyi"
                         //sh "git switch master"

@@ -23,7 +23,7 @@ spec:
     spec: # Pod spec
       containers:
       - name: amazon-container
-        image: dngwenyi/delco-app:latest
+        image: dngwenyi/delco-app:1
         ports:
         - containerPort: 3000
         

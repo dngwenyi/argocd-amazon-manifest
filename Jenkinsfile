@@ -1,7 +1,7 @@
 node {
     def app
     
-    env.IMAGE = 'dngwenyi/delco-app'
+    env.IMAGE = 'dngwenyi/amazone-clone'
 
     stage('Clone repository') {
              git branch: 'main', url: 'https://github.com/dngwenyi/argocd-amazon-manifest.git'
@@ -10,7 +10,7 @@ node {
     stage('Update GIT') {
             script {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    withCredentials([usernamePassword(credentialsId: 'delco-github', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
+                    withCredentials([usernamePassword(credentialsId: 'Ateba-Github', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
                         //script {def encodedPassword = URLEncoder.encode("$GIT_PASSWORD",'UTF-8')}
                         //script  {def IMAGE='ooghenekaro/amazon'}
                         sh "git config user.email dngwenyi@gmail.com"

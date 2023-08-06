@@ -23,7 +23,7 @@ spec:
     spec: # Pod spec
       containers:
       - name: amazon-container
-        image: dngwenyi/amazone-clone:latest
+        image: dngwenyi/amazone-clone:5
         ports:
         - containerPort: 3000
         
